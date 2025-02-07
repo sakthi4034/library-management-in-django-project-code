@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Book</title>
+    <style>
+        body { font-family: Arial, sans-serif;
+             text-align: center;
+             background-color:grey;
+             }
+        form { width: 50%; margin: auto; }
+        input[type="text"] {
+            width: 400px;
+            height: 40px;
+            font-size: 20px;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+        input[type="number"] {
+            width: 400px;
+            height: 40px;
+            font-size: 20px;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+        button[type='submit']{
+            width: 400px;
+            height: 50px;
+            font-size: 20px;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add New Book</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Title:</label><input type="text" name="title" placeholder='Enter Book title' required><br><br>
+        <label>Author:</label><input type="text" name="author" placeholder='Enter author name' required><br><br>
+        <label>ISBN:</label><input type="text" name="isbn" placeholder='Enter Book number' required><br><br>
+        <label>Available Copies:</label><input type="number" name="available_copies" placeholder='Enter available copies' required><br><br>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>

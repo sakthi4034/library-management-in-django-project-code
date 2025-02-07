@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Library Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; 
+            text-align: center;
+            background-color:pink;
+           
+         }
+        table { 
+            width: 80%;
+            margin: auto; 
+            border-collapse: collapse;
+            border:2px solid green; 
+        }
+        th, td,tr { 
+            border: 4px solid black; 
+            padding: 20px;
+         }
+    </style>
+</head>
+<body>
+    <h1>Library Books</h1>  
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Available Copies</th>
+        </tr>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.isbn }}</td>
+            <td>{{ book.available_copies }}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+    <a href="{% url 'add_book' %}">Add Book</a>
+</body>
+</html>
